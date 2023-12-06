@@ -55,6 +55,10 @@ namespace SzttCegreszlegekHf
             children.AddRange(child);
             return true;
         }
+        public bool Add(ICompanyObject child)
+        {
+            return this.Add(new List<ICompanyObject> { child });
+        }
 
         public bool Remove(ICompanyObject child)
         {

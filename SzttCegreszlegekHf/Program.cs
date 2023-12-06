@@ -35,15 +35,12 @@
 
             //Az alrészleghez hozzáadunk egy alkalmazottat, ami hibát fog okozni
             //de mivel nincs rá feliratkozva hibakezelő, ezért nem fog látszani
-            subDP.Add(new List<ICompanyObject>()
-            {
-                new Employee("C Pista", new DateTime(2010, 10, 10))
-            });
+            subDP.Add(new Employee("C Pista", new DateTime(2010, 10, 10)));
 
             //Kitörlünk annyi alkalmazottat, hogy a főrészleg ne lépje túl a maximális létszámot
             subDP.Remove(subDP.Children[0]);
             subDP.Remove(subDP.Children[0]);
-            mainDp.Add(new List<ICompanyObject> {subDP});
+            mainDp.Add(subDP);
 
             //Listázzuk a főrészleget és az öszes gyerekét
             mainDp.List();

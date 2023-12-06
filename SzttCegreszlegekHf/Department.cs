@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace SzttCegreszlegekHf
 {
-    class Department : ICompanyObject
+    class Department : ObservableSubject<IDepartmentError, List<ICompanyObject>>, ICompanyObject
     {
         private string name = "";
         public string Name { 
@@ -49,7 +49,7 @@ namespace SzttCegreszlegekHf
             int newSum = EmployeeCount + childSum;
             if (newSum > maxEmployeeCount)
             {
-                Console.WriteLine($"[Hiba] Sikertelen hozzáadás a {name} részleghez, mert a megadott maximális létszám {maxEmployeeCount}, míg az új létszám {newSum} lenne.");
+                Notify(child);
                 return false;
             }
             children.AddRange(child);
@@ -67,5 +67,9 @@ namespace SzttCegreszlegekHf
             children.ForEach(item => item.List());
         }
 
+        protected override void Notify(List<ICompanyObject> msg)
+        {
+            observers.ForEach(item => item.writeError(this, msg));
+        }
     }
 }

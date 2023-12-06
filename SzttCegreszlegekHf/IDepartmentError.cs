@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace SzttCegreszlegekHf
 {
-    interface ICompanyObject
+    interface IDepartmentError
     {
-        string Name { get; set; }
-        int EmployeeCount { get; }
-
-        void List();
+        void writeError( Department sender, List<ICompanyObject> companyObject);
     }
 }

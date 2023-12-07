@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SzttCegreszlegekHf
+﻿namespace SzttCegreszlegekHf
 {
+    // Egy observber osztály, ami kiírja a hibákat okozó composite elemeket nevét
     class ErrorListObserver : IDepartmentError
     {
         public void writeError(Department sender, List<ICompanyObject> companyObject)

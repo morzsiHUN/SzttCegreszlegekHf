@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SzttCegreszlegekHf
+﻿namespace SzttCegreszlegekHf
 {
+    // Egy observer osztály, ami kiírja, hogy mennyivel van túl lépve a maximális dolgozók száma
     class ErrorOverByObserver : IDepartmentError
     {
         public void writeError(Department sender, List<ICompanyObject> companyObject)

@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.ComponentModel;
-
-namespace SzttCegreszlegekHf
+﻿namespace SzttCegreszlegekHf
 {
+    // A cég részlegeit reprezentáló osztály
+    // Itt történnek a rekurzív hívások
+    // Ez egy összetett elem
     class Department : ObservableSubject<IDepartmentError, List<ICompanyObject>>, ICompanyObject
     {
         private string name = "";

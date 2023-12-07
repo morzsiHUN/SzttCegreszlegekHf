@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SzttCegreszlegekHf
+﻿namespace SzttCegreszlegekHf
 {
+    // A composity minta közös interfésze
+    // ami lehetővé teszi, hogy egymást tárolják és a fa szerú struktúra felépítését
     interface ICompanyObject
     {
         string Name { get; set; }

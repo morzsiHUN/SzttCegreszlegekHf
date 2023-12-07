@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SzttCegreszlegekHf
+﻿namespace SzttCegreszlegekHf
 {
+    // Ez az absztakt osztály intézi a feliratkázást, leiratkozást, felülírható metódusokkal
+    // Előírja a Notify megvalósítását
+    // Generikus típusokkal paraméterezhető, hogy mit küldjön a Notify és milyen típusú a feliratkozó
     abstract class ObservableSubject<Observer, Message>
     {
         protected List<Observer> observers = new List<Observer>();
